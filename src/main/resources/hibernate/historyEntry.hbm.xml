@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping" default-access="field">
+    <class name="nl.hva.vocability.domain.HistoryEntry" table="history_entry">
+
+        <id name="id" column="id" type="long">
+            <generator class="increment"/>
+        </id>
+
+        <component name="domainId" class="nl.hva.vocability.domain.ids.HistoryEntryId">
+            <property name="id" column="history_entry_id" type="string"/>
+        </component>
+
+        <property name="language" column="language" type="string"/>
+        <property name="difficultyLevel" column="difficulty_level" type="string"/>
+        <property name="totalAnswers" column="total_answers" type="int"/>
+        <property name="correctAnswers" column="correct_answers" type="int"/>
+        <property name="date" column="date" type="java.time.LocalDateTime"/>
+
+    </class>
+</hibernate-mapping>

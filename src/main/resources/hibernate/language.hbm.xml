@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping xmlns="http://www.hibernate.org/xsd/hibernate-mapping" default-access="field">
+    <class name="nl.hva.vocability.domain.Language" table="language">
+
+        <id name="id" column="id" type="long">
+            <generator class="increment"/>
+        </id>
+
+        <component name="domainId" class="nl.hva.vocability.domain.ids.LanguageId">
+            <property name="id" column="language_id" type="string"/>
+        </component>
+
+        <property name="name" column="name" type="string"/>
+
+    </class>
+</hibernate-mapping>
